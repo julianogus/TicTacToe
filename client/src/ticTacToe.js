@@ -236,11 +236,17 @@ export default function game(){
 		};
 
 		this.drawCross = function(){
-			c.fillStyle = "#13F2DC";
-			//c.rotate((45 * Math.PI) / 180);
-			c.fillRect(this.coord.x+20, this.coord.y+(tileSize/2), tileSize-40, tileSize/8);
-			//c.setTransform(1, 0, 0, 1, 0, 0);
 
+			c.strokeStyle = "#13F2DC";    
+			c.lineWidth = 25;    
+			c.beginPath();    
+
+			c.moveTo(this.coord.x - 50 + tileSize/2, this.coord.y - 50+ tileSize/2);    
+			c.lineTo(this.coord.x + 50 + tileSize/2, this.coord.y + 50+ tileSize/2);    
+
+			c.moveTo(this.coord.x + 50+ tileSize/2, this.coord.y - 50+ tileSize/2);    
+			c.lineTo(this.coord.x - 50+ tileSize/2, this.coord.y + 50+ tileSize/2);    
+			c.stroke();    
 
 		}
 
